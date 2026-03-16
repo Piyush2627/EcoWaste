@@ -6,7 +6,7 @@ import {
     MdDeveloperBoard,
     MdCheckCircle,
     MdWarning,
-    MdSell,
+
     MdAutoAwesome
 } from "react-icons/md";
 import axios from "../utils/axios";
@@ -21,7 +21,7 @@ interface AnalysisResult {
     item_type: string;
     recommendations: string[];
     disposal_guide: DisposalGuide;
-    reword_points?: number; 
+    reword_points?: number;
 }
 
 export default function AIAnalyzer() {
@@ -30,7 +30,7 @@ export default function AIAnalyzer() {
     const [weight, setWeight] = useState<string>("");
     const [loading, setLoading] = useState<boolean>(false);
     const [result, setResult] = useState<AnalysisResult | null>(null);
-    
+
     // Pickup Modal States
     const [showPickupModal, setShowPickupModal] = useState<boolean>(false);
     const [address, setAddress] = useState<string>("");
@@ -107,12 +107,12 @@ export default function AIAnalyzer() {
                 {/* Input Column */}
                 <div className="lg:col-span-7 space-y-6">
                     {/* Upload Area */}
-                    <div 
+                    <div
                         onClick={() => document.getElementById("fileInput")?.click()}
                         className="bg-white dark:bg-slate-900 rounded-xl p-8 border-2 border-dashed border-primary/20 flex flex-col items-center justify-center text-center group hover:border-primary transition-all cursor-pointer relative overflow-hidden h-64"
                     >
                         <input type="file" id="fileInput" className="hidden" accept="image/*" onChange={handleFileChange} />
-                        
+
                         {preview ? (
                             <img src={preview} alt="Upload Preview" className="absolute inset-0 w-full h-full object-cover rounded-xl" />
                         ) : (
@@ -134,18 +134,18 @@ export default function AIAnalyzer() {
                         <label className="block mb-4">
                             <span className="text-slate-900 dark:text-slate-100 font-bold block mb-2">Estimated Weight (kg)</span>
                             <div className="relative">
-                                <input 
-                                    value={weight} 
+                                <input
+                                    value={weight}
                                     onChange={e => setWeight(e.target.value)}
-                                    className="w-full bg-background-light dark:bg-slate-800 border border-primary/20 rounded-lg px-4 py-4 focus:ring-2 focus:ring-primary focus:border-transparent outline-none text-lg" 
-                                    placeholder="e.g. 1.5" 
-                                    step="0.1" 
+                                    className="w-full bg-background-light dark:bg-slate-800 border border-primary/20 rounded-lg px-4 py-4 focus:ring-2 focus:ring-primary focus:border-transparent outline-none text-lg"
+                                    placeholder="e.g. 1.5"
+                                    step="0.1"
                                     type="number"
                                 />
                                 <span className="absolute right-4 top-1/2 -translate-y-1/2 text-slate-400 font-medium">kg</span>
                             </div>
                         </label>
-                        <button 
+                        <button
                             onClick={handleAnalyze}
                             disabled={loading}
                             className="w-full bg-primary hover:bg-primary/90 text-slate-900 font-black py-4 rounded-xl flex items-center justify-center gap-2 text-lg shadow-xl shadow-primary/20 transition-all"
@@ -160,7 +160,7 @@ export default function AIAnalyzer() {
                             <div className="flex-grow border-t border-slate-200 dark:border-slate-800"></div>
                         </div>
 
-                        <button 
+                        <button
                             onClick={() => setShowPickupModal(true)}
                             className="w-full bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 text-slate-800 dark:text-slate-200 font-bold py-3 rounded-xl flex items-center justify-center gap-2 text-sm shadow-sm transition-all border border-slate-200 dark:border-slate-700"
                         >
@@ -179,7 +179,7 @@ export default function AIAnalyzer() {
                             </h3>
                             <span className="px-2 py-1 rounded bg-primary/20 text-primary text-[10px] font-black uppercase tracking-widest">{result ? "Processed" : "Ready"}</span>
                         </div>
-                        
+
                         <div className="p-6 flex-grow">
                             {!result ? (
                                 <div className="flex flex-col items-center justify-center h-full text-center py-10 opacity-60">
@@ -209,7 +209,7 @@ export default function AIAnalyzer() {
                                         <ul className="space-y-3">
                                             {result.recommendations.map((rec, idx) => (
                                                 <li key={idx} className="flex gap-3 items-start text-sm">
-                                                    {idx % 2 === 0 ? <MdCheckCircle className="text-primary text-base" /> : <MdWarning className="text-amber-500 text-base" /> }
+                                                    {idx % 2 === 0 ? <MdCheckCircle className="text-primary text-base" /> : <MdWarning className="text-amber-500 text-base" />}
                                                     <span className="text-slate-600 dark:text-slate-400">{rec}</span>
                                                 </li>
                                             ))}
@@ -221,7 +221,7 @@ export default function AIAnalyzer() {
                                         <h5 className="text-sm font-bold text-slate-900 dark:text-slate-100 mb-4">Disposal Guide</h5>
                                         <div className="flex items-center gap-6">
                                             <div className="relative group">
-                                                <div 
+                                                <div
                                                     className={`w-16 h-20 rounded-t-lg relative flex flex-col items-center justify-center text-white overflow-hidden`}
                                                     style={{ backgroundColor: result.disposal_guide.bin_color.toLowerCase() === 'red' ? '#dc2626' : result.disposal_guide.bin_color.toLowerCase() === 'blue' ? '#2563eb' : '#eab308' }}
                                                 >
@@ -245,7 +245,7 @@ export default function AIAnalyzer() {
                                                     <p className="text-xs text-slate-500 font-bold uppercase">Estimated Value</p>
                                                     <p className="text-xl font-black text-primary">{result.reword_points} Points</p>
                                                 </div>
-                                                <button 
+                                                <button
                                                     onClick={() => setShowPickupModal(true)}
                                                     className="bg-primary text-slate-900 px-4 py-2 rounded-lg font-bold text-sm shadow-md hover:shadow-lg transition-all"
                                                 >
@@ -267,10 +267,10 @@ export default function AIAnalyzer() {
                     <div className="bg-white dark:bg-slate-900 rounded-xl w-full max-w-md p-6 border border-primary/20 shadow-2xl">
                         <h3 className="text-xl font-bold text-slate-900 dark:text-slate-100 mb-2">Schedule E-Waste Pickup</h3>
                         <p className="text-slate-500 text-sm mb-4">Our collection partner will come to get your item and verify points layout shortly.</p>
-                        
+
                         <label className="block mb-4">
                             <span className="text-slate-700 dark:text-slate-300 font-bold text-sm block mb-1">Pickup Address</span>
-                            <textarea 
+                            <textarea
                                 value={address}
                                 onChange={e => setAddress(e.target.value)}
                                 className="w-full bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-lg p-3 text-sm focus:ring-2 focus:ring-primary outline-none h-24"
@@ -279,13 +279,13 @@ export default function AIAnalyzer() {
                         </label>
 
                         <div className="flex gap-3">
-                            <button 
+                            <button
                                 onClick={() => setShowPickupModal(false)}
                                 className="flex-1 bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 font-bold py-3 rounded-lg text-sm hover:bg-slate-200"
                             >
                                 Cancel
                             </button>
-                            <button 
+                            <button
                                 onClick={handleSchedulePickup}
                                 disabled={placingPickup}
                                 className="flex-1 bg-primary text-slate-900 font-bold py-3 rounded-lg text-sm shadow-lg shadow-primary/20 hover:bg-primary/90"
@@ -296,7 +296,7 @@ export default function AIAnalyzer() {
                     </div>
                 </div>
             )}
-            
+
             {/* Recent Processing Footer */}
             <section className="mt-16 border-t border-primary/10 pt-12">
                 <h3 className="text-xl font-bold text-slate-900 dark:text-slate-100 mb-8">Recent E-Waste Processing</h3>

@@ -14,22 +14,10 @@ import {
     MdLocalOffer
 } from "react-icons/md";
 import axios from "../utils/axios";
-import { Link } from "react-router-dom";
 import { useProducts } from "../api/fetchProduct";
 import React from "react";
 import { toast } from "react-hot-toast";
 import { isAuthenticated } from "../utils/auth";
-
-// --- Types ---
-interface Product {
-    _id: string;
-    title: string;
-    price_points: number;
-    description: string;
-    image_url?: string;
-    stock: number;
-}
-
 interface EwasteListing {
     _id: string;
     title: string;
