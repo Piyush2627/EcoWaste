@@ -1,0 +1,12 @@
+{
+    "python.defaultInterpreterPath": "python",
+    "python.analysis.extraPaths": [
+        "./server"
+    ],
+    "python.autoComplete.extraPaths": [
+        "./server"
+    ],
+    "pyre.source_directories": [
+        "./server"
+    ]
+}
