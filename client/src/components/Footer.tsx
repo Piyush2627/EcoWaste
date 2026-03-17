@@ -1,4 +1,7 @@
+import logo from "../assets/logo_ecowaste.png";
+
 function Footer() {
+
 	return (
 		<div>
 			<footer className="bg-background-light border-t border-neutral-border pt-20 pb-10 px-6 md:px-10 lg:px-40">
@@ -6,9 +9,8 @@ function Footer() {
 					<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
 						<div className="space-y-6">
 							<div className="flex items-center gap-3">
-								<span className="material-symbols-outlined text-primary text-3xl">
-									recycling
-								</span>
+								<img src={logo} className="w-8 h-8 object-contain" alt="EcoWaste Logo" />
+
 								<h2 className="text-text-main text-xl font-bold tracking-tight">
 									EcoWaste
 								</h2>

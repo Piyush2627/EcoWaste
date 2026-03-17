@@ -2,6 +2,8 @@ import { MdRecycling, MdLogout, MdDashboard } from "react-icons/md";
 import { Link, useNavigate, useLocation } from "react-router-dom";
 import { isAuthenticated, removeAuthToken, getUserRole, decodeToken, getAuthToken } from "../utils/auth";
 import { useState, useEffect } from "react";
+import logo from "../assets/logo_ecowaste.png";
+
 
 function TopNavbar() {
 	const navigate = useNavigate();
@@ -33,10 +35,9 @@ function TopNavbar() {
 					<div className="flex items-center gap-8">
 						<Link to={"/"}>
 							<div className="flex items-center gap-3">
-								<span className="material-symbols-outlined text-primary text-3xl">
-									<MdRecycling />
-								</span>
+								<img src={logo} className="w-8 h-8 object-contain" alt="EcoWaste Logo" />
 								<h2 className="text-text-main text-xl font-bold tracking-tight">
+
 									EcoWaste
 								</h2>
 							</div>

@@ -8,11 +8,15 @@ import {
     MdExplore,
     MdSettingsSuggest,
     MdMailOutline,
+
+
     MdLockOutline,
     MdArrowForward,
     MdArrowBack,
 } from "react-icons/md";
 import { Link } from "react-router-dom";
+import logo from "../assets/logo_ecowaste.png";
+
 
 function LoginPage() {
     const [email, setEmail] = useState("");
@@ -72,9 +76,8 @@ function LoginPage() {
 
                     <div className="relative z-10">
                         <div className="flex items-center gap-2 mb-16">
-                            <div className="bg-emerald-600 p-2 rounded-lg text-white">
-                                <MdExplore size={24} />
-                            </div>
+                            <img src={logo} className="w-10 h-10 object-contain" alt="EcoWaste Logo" />
+
                             <span className="text-xl font-bold tracking-tight">EcoWaste</span>
                         </div>
 
@@ -131,9 +134,8 @@ function LoginPage() {
                     <div className="w-full max-w-md">
                         {/* Mobile Logo (Visible only on small screens) */}
                         <div className="lg:hidden flex items-center gap-2 mb-12">
-                            <div className="bg-emerald-600 p-1.5 rounded-lg text-white">
-                                <MdExplore size={20} />
-                            </div>
+                            <img src={logo} className="w-8 h-8 object-contain" alt="EcoWaste Logo" />
+
                             <span className="text-lg font-bold">EcoWaste</span>
                         </div>
 

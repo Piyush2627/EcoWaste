@@ -3,15 +3,17 @@ import { useNavigate } from "react-router-dom";
 import axios from "../utils/axios";
 import { toast } from "react-hot-toast";
 import {
-	MdExplore,
 	MdMailOutline,
 	MdLockOutline,
+
 	MdPersonOutline,
 	MdArrowForward,
 	MdCheckCircle,
 	MdArrowBack,
 } from "react-icons/md";
 import { Link } from "react-router-dom";
+import logo from "../assets/logo_ecowaste.png";
+
 
 function SignupPage() {
 	const [name, setName] = useState("");
@@ -60,9 +62,8 @@ function SignupPage() {
 
 					<div className="relative z-10">
 						<div className="flex items-center gap-2 mb-16">
-							<div className="bg-emerald-600 p-2 rounded-lg text-white">
-								<MdExplore size={24} />
-							</div>
+							<img src={logo} className="w-10 h-10 object-contain" alt="EcoWaste Logo" />
+
 							<span className="text-xl font-bold tracking-tight">EcoWaste</span>
 						</div>
 
@@ -117,9 +118,8 @@ function SignupPage() {
 				<div className="w-full lg:w-1/2 flex items-center justify-center p-6 md:p-12">
 					<div className="w-full max-w-md">
 						<div className="lg:hidden flex items-center gap-2 mb-12">
-							<div className="bg-emerald-600 p-1.5 rounded-lg text-white">
-								<MdExplore size={20} />
-							</div>
+							<img src={logo} className="w-8 h-8 object-contain" alt="EcoWaste Logo" />
+
 							<span className="text-lg font-bold">EcoWaste</span>
 						</div>
 
