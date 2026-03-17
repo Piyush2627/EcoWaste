@@ -153,7 +153,7 @@ const AboutPage: React.FC = () => {
                                 img: "/team/founder_0.jpg",
                             },
                             {
-                                name: "Piyush Dahiwadkar",
+                                name: "Piyush",
                                 role: "Co-Founder",
                                 img: "/team/founder_1.jpg",
                             },
